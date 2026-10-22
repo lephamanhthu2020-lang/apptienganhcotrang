@@ -1,0 +1,7 @@
+{
+  "name": "English Buddy AI",
+  "description": "AI đồng hành cùng học sinh tiểu học học Tiếng Anh - Cá nhân hóa, tương tác, truyền cảm hứng",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

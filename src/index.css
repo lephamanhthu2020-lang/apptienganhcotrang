@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Quicksand', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, .font-heading {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes eye-blink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  94%, 98% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes wave-arm {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: eye-blink 5s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave-arm 2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-pulse-glow {
+  animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+/* Custom rounded playful scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

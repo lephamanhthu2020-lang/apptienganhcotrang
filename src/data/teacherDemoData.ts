@@ -1,0 +1,380 @@
+import { CreativeProject, HomeworkAssignment, StudentProfile } from '../types';
+
+export interface ClassRoom {
+  id: string;
+  name: string;
+  gradeLevel: 1 | 2 | 3 | 4 | 5;
+  schoolName: string;
+  teacherName: string;
+  code: string;
+  studentCount: number;
+}
+
+export const DEMO_CLASSROOMS: ClassRoom[] = [
+  {
+    id: 'class-3a',
+    name: 'Lớp 3A',
+    gradeLevel: 3,
+    schoolName: 'Tiểu học Khoái Châu 1',
+    teacherName: 'Lê Thị Trang',
+    code: 'KC1-3A',
+    studentCount: 28,
+  },
+  {
+    id: 'class-4b',
+    name: 'Lớp 4B',
+    gradeLevel: 4,
+    schoolName: 'Tiểu học Khoái Châu 1',
+    teacherName: 'Lê Thị Trang',
+    code: 'KC1-4B',
+    studentCount: 30,
+  },
+];
+
+// Student list using cute Vietnamese primary nicknames
+export const DEMO_STUDENTS: StudentProfile[] = [
+  {
+    id: 'st-01',
+    name: 'Nguyễn B. (Biệt danh: Nhím Dũng Cảm)',
+    nickname: 'Nhím',
+    avatarSeed: '🦊',
+    gradeLevel: 3,
+    className: 'Lớp 3A',
+    studentCode: 'KC3A-01',
+    initialSurveyScore: 60,
+    initialTier: 'core',
+    currentTier: 'advanced',
+    stars: 48,
+    streakDays: 6,
+    completedStages: ['island-1', 'island-2'],
+    vocabularyMastered: ['Hello', 'Friend', 'Father', 'Mother', 'School'],
+    badges: [
+      { id: 'b1', title: 'Nhà thám hiểm mới', description: 'Hoàn thành bài khảo sát đầu vào', icon: '🌟', unlockedAt: '2026-10-15' },
+      { id: 'b2', title: 'Ngôi sao nghe hiểu', description: 'Đạt điểm tối đa bài nghe Island 1', icon: '🎧', unlockedAt: '2026-10-18' },
+    ],
+    speakingScores: [
+      { date: '2026-10-16', target: 'Hello, what is your name?', score: 75 },
+      { date: '2026-10-20', target: 'My name is Nhim and I like cats.', score: 92 },
+    ],
+  },
+  {
+    id: 'st-02',
+    name: 'Trần M. (Biệt danh: Sóc Nhanh Nhẹn)',
+    nickname: 'Sóc',
+    avatarSeed: '🐿️',
+    gradeLevel: 3,
+    className: 'Lớp 3A',
+    studentCode: 'KC3A-02',
+    initialSurveyScore: 50,
+    initialTier: 'support',
+    currentTier: 'core',
+    stars: 35,
+    streakDays: 4,
+    completedStages: ['island-1'],
+    vocabularyMastered: ['Hello', 'Cat', 'Dog', 'Book'],
+    badges: [
+      { id: 'b1', title: 'Nhà thám hiểm mới', description: 'Hoàn thành bài khảo sát đầu vào', icon: '🌟', unlockedAt: '2026-10-16' },
+      { id: 'b3', title: 'Mạnh dạn luyện nói', description: 'Thực hành nói 5 câu cùng Buddy', icon: '🎤', unlockedAt: '2026-10-19' },
+    ],
+    speakingScores: [
+      { date: '2026-10-17', target: 'Hello Buddy!', score: 68 },
+      { date: '2026-10-21', target: 'This is my mother.', score: 85 },
+    ],
+  },
+  {
+    id: 'st-03',
+    name: 'Lê T. (Biệt danh: Bo Tinh Nghịch)',
+    nickname: 'Bo',
+    avatarSeed: '🦁',
+    gradeLevel: 3,
+    className: 'Lớp 3A',
+    studentCode: 'KC3A-03',
+    initialSurveyScore: 90,
+    initialTier: 'advanced',
+    currentTier: 'advanced',
+    stars: 62,
+    streakDays: 8,
+    completedStages: ['island-1', 'island-2', 'island-3'],
+    vocabularyMastered: ['Hello', 'Goodbye', 'Father', 'Mother', 'School', 'Teacher', 'Pencil', 'Library'],
+    badges: [
+      { id: 'b1', title: 'Nhà thám hiểm mới', description: 'Hoàn thành bài khảo sát đầu vào', icon: '🌟', unlockedAt: '2026-10-14' },
+      { id: 'b4', title: 'Bậc thầy từ vựng', description: 'Thuộc trên 20 từ vựng xuất sắc', icon: '🏆', unlockedAt: '2026-10-21' },
+    ],
+    speakingScores: [
+      { date: '2026-10-15', target: 'What is your name?', score: 95 },
+      { date: '2026-10-21', target: 'I want to be an engineer.', score: 98 },
+    ],
+  },
+  {
+    id: 'st-04',
+    name: 'Phạm H. (Biệt danh: Bắp Siêng Năng)',
+    nickname: 'Bắp',
+    avatarSeed: '🌽',
+    gradeLevel: 3,
+    className: 'Lớp 3A',
+    studentCode: 'KC3A-04',
+    initialSurveyScore: 40,
+    initialTier: 'support',
+    currentTier: 'core',
+    stars: 30,
+    streakDays: 3,
+    completedStages: ['island-1'],
+    vocabularyMastered: ['Hello', 'Apple', 'Milk'],
+    badges: [
+      { id: 'b1', title: 'Nhà thám hiểm mới', description: 'Hoàn thành bài khảo sát đầu vào', icon: '🌟', unlockedAt: '2026-10-17' },
+    ],
+    speakingScores: [
+      { date: '2026-10-18', target: 'Hello Buddy', score: 65 },
+      { date: '2026-10-22', target: 'I like milk', score: 82 },
+    ],
+  },
+  {
+    id: 'st-05',
+    name: 'Đỗ Q. (Biệt danh: Miu Đáng Yêu)',
+    nickname: 'Miu',
+    avatarSeed: '🐱',
+    gradeLevel: 3,
+    className: 'Lớp 3A',
+    studentCode: 'KC3A-05',
+    initialSurveyScore: 70,
+    initialTier: 'core',
+    currentTier: 'advanced',
+    stars: 52,
+    streakDays: 7,
+    completedStages: ['island-1', 'island-2'],
+    vocabularyMastered: ['Hello', 'Cat', 'Dog', 'Sister', 'Baby', 'Bread'],
+    badges: [
+      { id: 'b1', title: 'Nhà thám hiểm mới', description: 'Hoàn thành bài khảo sát đầu vào', icon: '🌟', unlockedAt: '2026-10-15' },
+      { id: 'b5', title: 'Chăm chỉ liên tục', description: 'Học liên tục 7 ngày', icon: '🔥', unlockedAt: '2026-10-22' },
+    ],
+    speakingScores: [
+      { date: '2026-10-16', target: 'Hello, I am Miu.', score: 78 },
+      { date: '2026-10-22', target: 'I have a cute cat.', score: 94 },
+    ],
+  },
+  {
+    id: 'st-06',
+    name: 'Hoàng K. (Biệt danh: Thỏ Thông Thái)',
+    nickname: 'Thỏ',
+    avatarSeed: '🐰',
+    gradeLevel: 3,
+    className: 'Lớp 3A',
+    studentCode: 'KC3A-06',
+    initialSurveyScore: 80,
+    initialTier: 'core',
+    currentTier: 'advanced',
+    stars: 58,
+    streakDays: 5,
+    completedStages: ['island-1', 'island-2'],
+    vocabularyMastered: ['Hello', 'Goodbye', 'School', 'Book', 'Pencil', 'Teacher'],
+    badges: [
+      { id: 'b1', title: 'Nhà thám hiểm mới', description: 'Hoàn thành bài khảo sát đầu vào', icon: '🌟', unlockedAt: '2026-10-15' },
+    ],
+    speakingScores: [
+      { date: '2026-10-17', target: 'Nice to meet you!', score: 84 },
+      { date: '2026-10-21', target: 'Our classroom is clean.', score: 91 },
+    ],
+  },
+];
+
+// Comparative analytics demo data (Before vs After)
+export const BEFORE_AFTER_STATS = [
+  {
+    skill: 'Từ vựng (Vocabulary)',
+    before: 52,
+    after: 86,
+    unit: 'Điểm trung bình (thang 100)',
+    note: 'Tăng 34 điểm nhờ flashcard AI & game lặp lại thông minh',
+  },
+  {
+    skill: 'Nghe hiểu (Listening)',
+    before: 58,
+    after: 84,
+    unit: 'Điểm trung bình (thang 100)',
+    note: 'Tăng 26 điểm nhờ tính năng chỉnh tốc độ và âm thanh trực quan',
+  },
+  {
+    skill: 'Tự tin phát âm & Nói (Speaking)',
+    before: 41,
+    after: 82,
+    unit: 'Điểm trung bình (thang 100)',
+    note: 'Tăng 41 điểm vượt bậc - học sinh hết e ngại nhờ luyện cùng Buddy',
+  },
+  {
+    skill: 'Đánh giá tổng hợp (Overall)',
+    before: 50.3,
+    after: 84.0,
+    unit: 'Điểm trung bình (thang 100)',
+    note: 'Tỷ lệ học sinh củng cố nền tảng giảm mạnh từ 42% xuống còn 7%',
+  },
+];
+
+// Student feeling & motivation survey results (Thang đo 1-5)
+export const PERCEPTION_SURVEY_RESULTS = [
+  { criteria: 'Sự tự tin khi nói Tiếng Anh', score: 4.6, description: 'Học sinh không sợ sai khi trò chuyện với robot Buddy' },
+  { criteria: 'Hứng thú tham gia giờ học', score: 4.8, description: 'Yêu thích các hòn đảo ngôn ngữ và trò chơi tương tác' },
+  { criteria: 'Tính chủ động tự học ở nhà', score: 4.4, description: 'Học sinh tự giác làm nhiệm vụ thu thập sao mỗi tối' },
+  { criteria: 'Cảm nhận về sự hữu ích của AI', score: 4.7, description: 'Được trợ lý Buddy hướng dẫn kiên nhẫn từng câu' },
+];
+
+// Integrated Tool Hub (8 groups of educational tools)
+export const INTEGRATED_TOOLS = [
+  {
+    id: 'chatgpt',
+    name: 'ChatGPT',
+    role: 'Xây dựng kịch bản & câu chuyện',
+    description: 'Hỗ trợ giáo viên soạn thảo câu chuyện thiếu nhi, hội thoại song ngữ và kịch bản phân vai.',
+    category: 'Nội dung',
+    iconColor: 'bg-emerald-500',
+    tags: ['Kịch bản', 'Từ vựng', 'Prompt GDPT 2018'],
+    link: 'https://chat.openai.com',
+  },
+  {
+    id: 'canva',
+    name: 'Canva for Education',
+    role: 'Thiết kế học liệu trực quan',
+    description: 'Tạo thẻ flashcard sắc nét, poster lớp học và phiếu bài tập rực rỡ thu hút học sinh tiểu học.',
+    category: 'Hình ảnh',
+    iconColor: 'bg-cyan-500',
+    tags: ['Flashcard', 'Poster', 'Infographic'],
+    link: 'https://www.canva.com',
+  },
+  {
+    id: 'suno',
+    name: 'Suno AI',
+    role: 'Sáng tạo bài hát Tiếng Anh',
+    description: 'Phổ nhạc các bài thơ từ vựng tiếng Anh theo phong cách vui nhộn giúp học sinh dễ thuộc bài.',
+    category: 'Âm nhạc',
+    iconColor: 'bg-purple-500',
+    tags: ['Nhạc thiếu nhi', 'Ghi nhớ vần', 'Phát âm'],
+    link: 'https://suno.com',
+  },
+  {
+    id: 'gemini',
+    name: 'Google Gemini AI',
+    role: 'Cá nhân hóa & Gia sư Buddy',
+    description: 'Lõi trí tuệ nhân tạo của ứng dụng English Buddy: phân hóa năng lực, chấm phát âm và trò chuyện.',
+    category: 'Lõi AI',
+    iconColor: 'bg-blue-600',
+    tags: ['Phân tích câu', 'Gia sư kiên nhẫn', 'Đánh giá'],
+    link: 'https://gemini.google.com',
+  },
+  {
+    id: 'wordwall',
+    name: 'Wordwall',
+    role: 'Trò chơi tương tác nhanh',
+    description: 'Kho mini-game vòng quay kỳ diệu, mê cung từ vựng và đập chuột nối từ Tiếng Anh.',
+    category: 'Trò chơi',
+    iconColor: 'bg-amber-500',
+    tags: ['Vòng quay', 'Nối cặp', 'Mê cung'],
+    link: 'https://wordwall.net',
+  },
+  {
+    id: 'quizizz',
+    name: 'Quizizz',
+    role: 'Kiểm tra & Thi đấu lớp học',
+    description: 'Tổ chức các buổi thi đấu trả lời trắc nghiệm trực tiếp hào hứng với nhạc nền và bảng xếp hạng.',
+    category: 'Kiểm tra',
+    iconColor: 'bg-violet-600',
+    tags: ['Trắc nghiệm', 'Thi đấu', 'Thống kê'],
+    link: 'https://quizizz.com',
+  },
+  {
+    id: 'padlet',
+    name: 'Padlet',
+    role: 'Triển lãm dự án học sinh',
+    description: 'Bức tường kỹ thuật số nơi phụ huynh và giáo viên cùng chiêm ngưỡng poster sáng tạo của các em.',
+    category: 'Trưng bày',
+    iconColor: 'bg-rose-500',
+    tags: ['Triển lãm', 'Tương tác phụ huynh', 'Góp ý'],
+    link: 'https://padlet.com',
+  },
+  {
+    id: 'capcut',
+    name: 'CapCut',
+    role: 'Video học tập & Giới thiệu',
+    description: 'Biên tập video hoạt hình bài học ngắn, lồng tiếng mẫu câu và ghi lại khoảnh khắc học tập.',
+    category: 'Video',
+    iconColor: 'bg-black',
+    tags: ['Video bài giảng', 'Phụ đề song ngữ', 'Hoạt hình'],
+    link: 'https://www.capcut.com',
+  },
+];
+
+// Creative Projects initial showcase
+export const DEMO_CREATIVE_PROJECTS: CreativeProject[] = [
+  {
+    id: 'cp-01',
+    studentId: 'st-01',
+    studentName: 'Nhím Dũng Cảm (Lớp 3A)',
+    topic: 'My Family',
+    title: 'My Sweet Little Family',
+    caption: 'This is my family. I have a kind father and a sweet mother. I love them so much!',
+    stickers: ['👨‍👩‍👦', '❤️', '🏡', '🌸'],
+    bgColor: 'from-pink-100 to-rose-200',
+    createdAt: '2026-10-18',
+    status: 'approved',
+    teacherFeedback: 'Bài viết rất ấm áp! Con dùng từ "kind father" rất chính xác. Cô Trang tặng con 5 sao nhé! 🌟',
+    starsAwarded: 5,
+  },
+  {
+    id: 'cp-02',
+    studentId: 'st-03',
+    studentName: 'Bo Tinh Nghịch (Lớp 3A)',
+    topic: 'My Dream',
+    title: 'I Want To Be An Astronaut!',
+    caption: 'In the future, I want to fly into space with a cool rocket. I want to say Hello to alien friends in English!',
+    stickers: ['🚀', '🌌', '⭐', '🤖'],
+    bgColor: 'from-blue-100 to-indigo-200',
+    createdAt: '2026-10-19',
+    status: 'approved',
+    teacherFeedback: 'Ý tưởng tuyệt vời và câu văn rất giàu trí tưởng tượng! Phát âm câu thuyết trình của con rất chuẩn.',
+    starsAwarded: 5,
+  },
+  {
+    id: 'cp-03',
+    studentId: 'st-05',
+    studentName: 'Miu Đáng Yêu (Lớp 3A)',
+    topic: 'My Favourite Animal',
+    title: 'My Cute Cat Mimi',
+    caption: 'My cat is Mimi. She is white and orange. She loves drinking milk and playing with a red ball.',
+    stickers: ['🐱', '🥛', '🧶', '✨'],
+    bgColor: 'from-amber-100 to-yellow-200',
+    createdAt: '2026-10-21',
+    status: 'submitted',
+    teacherFeedback: 'Đang chờ cô giáo duyệt',
+  },
+];
+
+export const DEMO_ASSIGNMENTS: HomeworkAssignment[] = [
+  {
+    id: 'hw-01',
+    title: 'Chinh phục Đảo 1: Luyện phát âm 5 câu chào hỏi cùng Buddy',
+    className: 'Lớp 3A',
+    targetTier: 'all',
+    stageId: 'island-1',
+    dueDate: '2026-10-25',
+    completedCount: 22,
+    totalCount: 28,
+  },
+  {
+    id: 'hw-02',
+    title: 'Nhiệm vụ củng cố: Nghe và chọn 5 từ vựng gia đình',
+    className: 'Lớp 3A',
+    targetTier: 'support',
+    stageId: 'island-2',
+    dueDate: '2026-10-26',
+    completedCount: 6,
+    totalCount: 8,
+  },
+  {
+    id: 'hw-03',
+    title: 'Thử thách nâng cao: Đóng vai kể về ước mơ tương lai',
+    className: 'Lớp 3A',
+    targetTier: 'advanced',
+    stageId: 'island-8',
+    dueDate: '2026-10-27',
+    completedCount: 5,
+    totalCount: 7,
+  },
+];
